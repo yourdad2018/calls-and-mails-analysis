@@ -39,4 +39,4 @@ for i in calls:
     tel_numbers.add(i[0])
     tel_numbers.add(i[1])
 
-print(len(tel_numbers))
+print("There are {count} different telephone numbers in the records.".format(count = len(tel_numbers)))

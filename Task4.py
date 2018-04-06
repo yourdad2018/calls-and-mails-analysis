@@ -55,5 +55,3 @@ telemarketerNumbers.sort()
 print("These numbers could be telemarketers: ")
 for i in telemarketerNumbers:
     print(i)
-
-print('6' * 3)

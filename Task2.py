@@ -36,18 +36,25 @@ the key's existing value. If the key does not already appear in the
 dictionary, add it and set its value to be the given value.
 """
 
-total_time = 0
-tel_number = []
+calls_dict = {}
+max_time = 0
+
+
+def set_call_time(call, time):
+    if calls_dict.get(call):
+        calls_dict[call] += time
+    else:
+        calls_dict[call] = time
+
 
 for i in calls:
-    if int(i[3]) > total_time:
-        total_time = int(i[3])
-        tel_number = [i[0],i[1]]
-    elif i[3] == total_time:
-        if i[0] not in tel_number:
-            tel_number.append(i[0])
-        if i[1] not in tel_number:
-            tel_number.append(i[1])
+    set_call_time(i[0], int(i[3]))
+    set_call_time(i[1], int(i[3]))
 
 
-print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(" and ".join(tel_number),total_time))
+for i in calls_dict:
+    if calls_dict[i] > max_time:
+        max_time = calls_dict[i]
+        tel_number = i
+
+print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(tel_number,max_time))
