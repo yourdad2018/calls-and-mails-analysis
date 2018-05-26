@@ -89,4 +89,6 @@ for i in telephonesFromBangalore:
     if i.find('(080)') == 0:
         toBangaloreCalls += 1
 
-print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(round(toBangaloreCalls/allCalls,2)))
+percent = round(toBangaloreCalls/allCalls*100,2)
+
+print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(percent))
